@@ -397,7 +397,7 @@ const Chat = (props: Props) => {
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch weather data");
+          throw new Error("Failed to fetch stock data");
         }
 
         const stocksData = await response.json();
@@ -434,7 +434,7 @@ const Chat = (props: Props) => {
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch weather data");
+          throw new Error("Failed to fetch dictionary data");
         }
 
         const dictionaryData = await response.json();
@@ -450,7 +450,7 @@ const Chat = (props: Props) => {
         setError("");
         await handleAnswer(chat, JSON.stringify(dictionaryData));
       } else {
-        throw new Error("Mode is not dictoionary");
+        throw new Error("Mode is not dictionary");
       }
     } catch (error) {
       console.error("Error fetching or processing dictionary data:", error);
